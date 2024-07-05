@@ -18,6 +18,7 @@ npm i discord.js greetify
 ```
 
 # Usage
+## **Welcome or Goodbye card**
 <img src="https://i.imgur.com/2ALeGgf.png" />
 
 ```javascript
@@ -35,3 +36,18 @@ const { Minimal } = require("greetify");
         message: 'test',
         messageColor: '#4B71CB',
     })
+```
+## **MongoDB Connection**
+```javascript
+const { connect } = require('mongoose')
+const MONGO_URI = 'mongodb+srv://'
+    
+    
+    await connect(MONGO_URI)
+      .then(() => {
+        console.log(`Successfully connected to MongoDB!`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
