@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/NPC8TGc.png" />
+<img src="https://i.imgur.com/2zboH8h.png" />
 
 <p align="center">A system that sends a card whenever someone join or leave your discord server.</p>
 
