@@ -1,4 +1,6 @@
-<img src="https://i.imgur.com/2zboH8h.png" />
+<img src="https://i.imgur.com/2zboH8h.png">
+
+***
 
 <p align="center">A system that sends a card whenever someone join or leave your discord server.</p>
 
@@ -11,6 +13,8 @@
   <a href="https://github.com/unburn/greetify"><img src="https://img.shields.io/badge/Made%20using%20Greetify%20package-02589C" />
 </div>
 <p align="center">*Command handler is not included!</p>
+
+***
 
 # Installation
 ```
