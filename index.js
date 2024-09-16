@@ -5,32 +5,31 @@ const client = new Client({
     partials: [
         Partials.Message,
         Partials.Channel,
-        Partials.Reaction],
+    ],
     intents: [
         GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.GuildEmojisAndStickers,
         GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildVoiceStates
     ],
 });
 
 client.on("guildMemberAdd", async member => {
-    const welcomecard = new Minimal({
-        backgroundImage: 'https://images7.alphacoders.com/333/thumb-1920-333580.jpg',
-        name: member.user.username,
-        avatar: member.user.displayAvatarURL({
-            size: 4096 // For High Res Avatar
-        }),
-        type: "WELCOME",
-        message: `BebanCode`,
-    });
     await greeting.findOne({ GuildID: member.guild.id }).then(async (data) => {
         if (!data) return;
         if (data) {
-            await client.channels.cache.get(data.ChannelID).send({
+            const welcomecard = new Minimal({
+                // circleBorder: , #boolean
+                // messageColor: ,
+                // nameColor: ,
+                // typeColor,
+                backgroundImage: data.backgroundImage,
+                name: member.user.username,
+                avatar: member.user.displayAvatarURL({
+                    size: 4096 // For High Res Avatar
+                }),
+                type: "WELCOME",
+                message: `BebanCode`,
+            });
+            await client.channels.cache.get(data.ChannelId).send({
                 content: `Welcome ${member}`,
                 files: [{
                 attachment: await welcomecard,
@@ -41,19 +40,23 @@ client.on("guildMemberAdd", async member => {
 });
 
 client.on('guildMemberRemove', async member => {
-    const goodbyecard = new Minimal({
-        backgroundImage: 'https://images7.alphacoders.com/333/thumb-1920-333580.jpg',
-        name: member.user.username,
-        avatar: member.user.displayAvatarURL({
-            size: 4096 // For High Res Avatar
-        }),
-        type: "Goodbye",
-        message: `BebanCode`,
-    });
     await greeting.findOne({ GuildID: member.guild.id }).then(async (data) => {
         if (!data) return;
         if (data) {
-            await client.channels.cache.get(data.ChannelID).send({
+            const goodbyecard = new Minimal({
+                // circleBorder: , #boolean
+                // messageColor: ,
+                // nameColor: ,
+                // typeColor,
+                backgroundImage: data.backgroundImage,
+                name: member.user.username,
+                avatar: member.user.displayAvatarURL({
+                    size: 4096 // For High Res Avatar
+                }),
+                type: "GOODBYE",
+                message: `BebanCode`,
+            });
+            await client.channels.cache.get(data.ChannelId).send({
                 content: `Goodbye ${member.user.tag}, We hope you visit us back!`,
                 files: [{
                 attachment: await goodbyecard,
@@ -63,4 +66,4 @@ client.on('guildMemberRemove', async member => {
     });
 });
 
-client.login("TOKEN");
+client.login("PUT_YOUR_BOT_TOKEN_HERE");

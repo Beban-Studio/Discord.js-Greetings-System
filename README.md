@@ -1,6 +1,6 @@
-<img src="https://i.imgur.com/2zboH8h.png">
+<img src="https://ik.imagekit.io/bebanserver/Banners/Greeting%20System%20_Githup%20Repo_.svg">
 
-***
+---
 
 <p align="center">A system that sends a card whenever someone join or leave your discord server.</p>
 
@@ -14,7 +14,7 @@
 </div>
 <p align="center">*Command handler is not included!</p>
 
-***
+---
 
 # Installation
 ```
@@ -54,4 +54,3 @@ const MONGO_URI = 'mongodb+srv://'
       .catch((err) => {
         console.log(err);
       });
-
